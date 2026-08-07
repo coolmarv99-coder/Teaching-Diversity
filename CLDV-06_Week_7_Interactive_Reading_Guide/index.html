@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CLDV-06 Week 7 Interactive Reading Guide</title>
+<style>
+:root{--navy:#173f63;--teal:#287a78;--ink:#172033;--muted:#5c6678;--gold:#e1ad35;--border:#d8deea;--shadow:0 8px 24px rgba(22,32,51,.09);--green:#287a51;--soft:#f5f7fb}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--soft);color:var(--ink);line-height:1.55}
+button,input,textarea,select{font:inherit}button{cursor:pointer}a{color:var(--navy)}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #4e9cf5;outline-offset:2px}
+.sitebar{background:var(--navy);color:#fff;padding:14px 20px}.sitebar-inner{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700}.logo{width:46px;height:46px;border:2px solid #fff;border-radius:12px;display:grid;place-items:center}
+.small{font-size:.9rem;color:var(--muted)}.sitebar .small{color:#d9e6f5}
+main{max-width:1180px;margin:0 auto;padding:28px 18px 60px}.hero{display:flex;justify-content:space-between;gap:24px;align-items:end;flex-wrap:wrap}
+h1{font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:.1em 0}.subtitle{font-size:1.08rem;margin:0;color:#39445a}
+.progress-wrap{min-width:260px}.progress-line{height:10px;background:#d9dee7;border-radius:999px;overflow:hidden}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--green),#52a981);transition:width .35s ease}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0}.step{background:#fff;border:1px solid var(--border);border-radius:999px;padding:11px 12px;text-align:center;font-weight:650;color:#667085;text-decoration:none}.step.active{background:#eaf5f3;color:#145854;border-color:#a7d2cf}.step.done{background:#eaf7f1;color:#176847}
+.card{background:#fff;border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}
+.story{display:grid;grid-template-columns:minmax(300px,44%) 1fr;background:linear-gradient(110deg,#fff5ee,#fff)}.story img{width:100%;height:100%;min-height:430px;object-fit:cover}.story-copy{padding:30px}
+.kicker{font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:#875438}h2{font-size:1.55rem;margin:.25em 0 .5em}h3{font-size:1.18rem;margin:0 0 12px}
+.story-note{background:rgba(255,255,255,.88);border-left:5px solid var(--gold);padding:14px 16px;border-radius:12px;margin-top:18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.activity{padding:24px}.question{font-weight:700;margin-bottom:14px}.options{display:grid;gap:10px}
+.option{display:flex;gap:12px;align-items:flex-start;border:1px solid #ccd3df;border-radius:13px;padding:12px;background:#fff}
+.feedback{display:none;margin-top:14px;padding:13px 15px;border-radius:13px;background:#edf9f1;border:1px solid #acd7b9}.feedback.show{display:block}
+.match-row{display:grid;grid-template-columns:190px 1fr;gap:12px;align-items:center;margin:10px 0}.term{font-weight:750;background:#edf5ff;border:1px solid #a7c5ef;border-radius:10px;padding:10px}
+select{width:100%;padding:10px;border:1px solid #bac4d3;border-radius:10px;background:#fff}
+.btn{border:none;border-radius:12px;padding:12px 18px;font-weight:750;background:var(--green);color:#fff;box-shadow:0 4px 12px rgba(40,122,81,.2)}
+.btn.secondary{background:#fff;color:var(--navy);border:1px solid #aeb9c8;box-shadow:none}.btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
+.resource-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:18px 0;padding:16px 18px;border:1px solid #b9c9dc;border-radius:18px;background:#eef6ff}
+.resource-bar p{margin:0}.resource-link{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border-radius:12px;padding:11px 15px;font-weight:750;background:#fff;color:var(--navy);border:1px solid #9fb0c5}
+.concept-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.concept{padding:18px;border-radius:18px;border:1px solid var(--border);background:#fff}.concept strong{display:block;margin-bottom:6px}
+.reflection{margin-top:18px;padding:24px;background:linear-gradient(135deg,#f1fbf4,#fff)}textarea{width:100%;min-height:120px;border:1px solid #bbc5d3;border-radius:14px;padding:14px;resize:vertical}
+.compare-panel{display:none;margin-top:18px}.compare-panel.show{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.compare-box{border-radius:18px;padding:18px;border:1px solid var(--border)}
+.compare-box:nth-child(1){background:#fff8df}.compare-box:nth-child(2){background:#edf9f5}.compare-box:nth-child(3){background:#f4efff}
+.complete{display:none;margin-top:18px;padding:20px;background:#eaf8f1;border:1px solid #a9d9bf;border-radius:18px;align-items:center;justify-content:space-between;gap:14px}.complete.show{display:flex}
+.badge{display:inline-block;background:#e8f5ee;color:#176847;border-radius:999px;padding:5px 10px;font-weight:800;font-size:.82rem}.section-label{font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;font-weight:800;color:var(--teal)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:850px){.story,.grid2{grid-template-columns:1fr}.story img{min-height:240px;max-height:390px}.concept-strip,.compare-panel.show{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){main{padding:18px 12px 40px}.sitebar{padding:10px 12px}.steps{grid-template-columns:1fr}.step{text-align:left}.match-row{grid-template-columns:1fr}.activity,.reflection,.story-copy{padding:18px}.complete.show{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.progress-fill{transition:none}}
+</style>
+</head>
+<body>
+<header class="sitebar"><div class="sitebar-inner"><div class="brand"><div class="logo">06</div><div>Teaching in a Diverse Society<div class="small">Interactive Reading Guide</div></div></div><div class="small">Week 7 • Esquivel Chapter 7</div></div></header>
+
+<main>
+<section class="hero">
+<div><span class="badge">Low-stakes self-check</span> <span class="badge">Listen • Clarify • Adapt</span>
+<h1>Why Does Everything Have to Become a Conflict?</h1>
+<p class="subtitle">Negotiating cultural differences while protecting relationships and supporting the child</p></div>
+<div class="progress-wrap"><div style="display:flex;justify-content:space-between;margin-bottom:7px"><strong>Overall progress</strong><span id="progressText">0%</span></div>
+<div class="progress-line" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-fill" id="progressFill"></div></div></div>
+</section>
+
+<nav class="steps"><a class="step active" href="#story">1. Vignette</a><a class="step" href="#explore">2. Differences</a><a class="step" href="#practice">3. Acknowledge–Ask–Adapt</a><a class="step" href="#reflect">4. Reflect</a></nav>
+
+<aside class="resource-bar"><p><strong>Keep Esquivel Chapter 7 nearby.</strong><br><span class="small">This guide supports the reading; it does not replace it.</span></p>
+<a class="resource-link" href="https://socialsci.libretexts.org/Bookshelves/Early_Childhood_Education/The_Role_of_Equity_and_Diversity_in_Early_Childhood_Education_(Esquivel_Elam_Paris_and_Tafoya)/07%3A_Effectively_Negotiating_and_Resolving_Conflict_Related_to_Issues_of_Diversity" target="_blank" rel="noopener noreferrer">📖 Open Esquivel Chapter 7</a></aside>
+<aside class="resource-bar"><p><strong>Practice freely.</strong><br><span class="small">Plan for about 15–20 minutes. Responses remain on this page and are not saved, graded, or submitted.</span></p></aside>
+
+<section id="story" class="card story">
+<img src="images/cldv06-week7-vignette.png" alt="Four college students discuss cultural differences, conflict, listening, and respect in an early childhood education classroom">
+<div class="story-copy"><div class="kicker">Opening vignette</div><h2>“Why Does Everything Have to Become a Conflict?”</h2>
+<p><strong>Derek:</strong> “Sometimes I feel like people are just looking for things to be offended by. Can’t teachers just be respectful and move on?”</p>
+<p><strong>Jordan:</strong> “But what happens when a family’s expectations are different from the program’s routines?”</p>
+<p><strong>Aaliyah:</strong> “That’s where conflict can happen—food, discipline, holidays, clothing, gender roles, communication, or who should be involved in decisions.”</p>
+<p><strong>Maya:</strong> “And if teachers assume their way is the normal way, they might see the family as difficult instead of trying to understand the difference.”</p>
+<p><strong>Derek:</strong> “But what if the teacher really is just trying to follow the rules?”</p>
+<p><strong>Aaliyah:</strong> “Resolving conflict is not only about proving who is right. It’s about listening carefully, respecting families, explaining program expectations clearly, and looking for solutions that support the child.”</p>
+<p><strong>Maya:</strong> “The goal is not to avoid every disagreement. The goal is to handle disagreements in a way that protects relationships.”</p>
+<div class="story-note"><strong>Think first:</strong> How can educators respond when cultural differences lead to conflict without becoming defensive, blaming families, or ignoring program responsibilities?</div>
+<div class="btn-row"><button class="btn" id="storyDone" type="button">I’ve considered the vignette</button></div></div>
+</section>
+
+<section id="explore" class="grid2">
+<article class="card activity"><div class="section-label">Conflict and diversity</div><h3>🔎 Choose the strongest response</h3>
+<p class="question">Which statement best reflects the chapter’s view of conflict?</p>
+<div class="options">
+<label class="option"><input type="radio" name="conflict" value="0"> Conflict usually proves one side is being unreasonable.</label>
+<label class="option"><input type="radio" name="conflict" value="1"> Conflict should be avoided because disagreement damages trust.</label>
+<label class="option"><input type="radio" name="conflict" value="2"> Conflict is inevitable and can become a learning experience when handled well.</label>
+<label class="option"><input type="radio" name="conflict" value="3"> Cultural conflict disappears when programs apply one rule consistently.</label>
+</div><div class="btn-row"><button class="btn" id="conflictCheck">Check my thinking</button></div><div class="feedback" id="conflictFeedback"></div></article>
+
+<article class="card activity"><div class="section-label">Three-step process</div><h3>🧩 Match it up</h3>
+<p>The descriptions are intentionally shuffled. Match each step with its best purpose.</p>
+<div class="match-row"><div class="term">Acknowledge</div><select data-answer="a">
+<option value="">Choose…</option>
+<option value="c">Seek common ground and negotiate a workable response</option>
+<option value="b">Gather information and clarify what each person means</option>
+<option value="a">Recognize the concern and approach it with sincere interest</option>
+</select></div>
+<div class="match-row"><div class="term">Ask</div><select data-answer="b">
+<option value="">Choose…</option>
+<option value="a">Recognize the concern and approach it with sincere interest</option>
+<option value="c">Seek common ground and negotiate a workable response</option>
+<option value="b">Gather information and clarify what each person means</option>
+</select></div>
+<div class="match-row"><div class="term">Adapt</div><select data-answer="c">
+<option value="">Choose…</option>
+<option value="b">Gather information and clarify what each person means</option>
+<option value="c">Seek common ground and negotiate a workable response</option>
+<option value="a">Recognize the concern and approach it with sincere interest</option>
+</select></div>
+<div class="btn-row"><button class="btn" id="checkMatch">Check matches</button><button class="btn secondary" id="resetMatch">Reset</button></div><div class="feedback" id="matchFeedback"></div></article>
+</section>
+
+<section class="concept-strip">
+<div class="concept"><strong>👂 Listen before defending.</strong>Teachers need enough curiosity to understand a family’s perspective before deciding what the difference means.</div>
+<div class="concept"><strong>🪞 Examine assumptions.</strong>A familiar practice is not automatically the only valid practice; professional reflection includes asking how culture shapes our own expectations.</div>
+<div class="concept"><strong>🧒 Keep the child centered.</strong>The goal is not to “win” a disagreement but to find the most respectful, safe, and workable path for the child.</div>
+</section>
+
+<section class="grid2">
+<article class="card activity"><div class="section-label">Preventing conflict</div><h3>🤝 Relationship first</h3>
+<p class="question">Which practice is most likely to prevent avoidable conflict with families?</p>
+<div class="options">
+<label class="option"><input type="radio" name="prevent" value="0"> Explain all rules at enrollment and avoid revisiting them.</label>
+<label class="option"><input type="radio" name="prevent" value="1"> Build relationships and ask families about their expectations and communication preferences.</label>
+<label class="option"><input type="radio" name="prevent" value="2"> Wait until a serious disagreement appears before discussing culture.</label>
+<label class="option"><input type="radio" name="prevent" value="3"> Use the same family-engagement strategy for every household.</label>
+</div><div class="btn-row"><button class="btn" id="preventCheck">Check answer</button></div><div class="feedback" id="preventFeedback"></div></article>
+
+<article class="card activity"><div class="section-label">Cultural interpretation</div><h3>🥄 Before judging</h3>
+<p class="question">A teacher worries that a three-year-old does not use a fork independently. What is the best first step?</p>
+<div class="options">
+<label class="option"><input type="radio" name="fork" value="0"> Teach fork use immediately so the child catches up.</label>
+<label class="option"><input type="radio" name="fork" value="1"> Record the behavior as a developmental delay.</label>
+<label class="option"><input type="radio" name="fork" value="2"> Ask the family about mealtime practices and their goals for the child.</label>
+<label class="option"><input type="radio" name="fork" value="3"> Compare the child with classmates of the same age.</label>
+</div><div class="btn-row"><button class="btn" id="forkCheck">Check answer</button></div><div class="feedback" id="forkFeedback"></div></article>
+</section>
+
+<section id="practice" class="grid2">
+<article class="card activity"><div class="section-label">Step 1: Acknowledge</div><h3>🗣️ Open the conversation</h3>
+<p class="question">A family objects to a classroom routine. Which opening best demonstrates “Acknowledge”?</p>
+<div class="options">
+<label class="option"><input type="radio" name="acknowledge" value="0"> “I can see this matters to you. I’d like to understand your concern.”</label>
+<label class="option"><input type="radio" name="acknowledge" value="1"> “This is our policy, so there is not much to discuss.”</label>
+<label class="option"><input type="radio" name="acknowledge" value="2"> “Most families are comfortable with the routine.”</label>
+<label class="option"><input type="radio" name="acknowledge" value="3"> “Let’s wait and see whether the problem goes away.”</label>
+</div><div class="btn-row"><button class="btn" id="acknowledgeCheck">Check answer</button></div><div class="feedback" id="acknowledgeFeedback"></div></article>
+
+<article class="card activity"><div class="section-label">Step 2: Ask</div><h3>❓ Clarify meaning</h3>
+<p class="question">Which question best fits the “Ask” step?</p>
+<div class="options">
+<label class="option"><input type="radio" name="ask" value="0"> “Why can’t you follow the program’s routine?”</label>
+<label class="option"><input type="radio" name="ask" value="1"> “Wouldn’t it be easier if everyone did the same thing?”</label>
+<label class="option"><input type="radio" name="ask" value="2"> “Can you help me understand what you hope will happen for your child?”</label>
+<label class="option"><input type="radio" name="ask" value="3"> “Do you agree that the teacher knows best?”</label>
+</div><div class="btn-row"><button class="btn" id="askCheck">Check answer</button></div><div class="feedback" id="askFeedback"></div></article>
+</section>
+
+<section class="grid2">
+<article class="card activity"><div class="section-label">Step 3: Adapt</div><h3>🔧 Find common ground</h3>
+<p class="question">Which response best represents “Adapt”?</p>
+<div class="options">
+<label class="option"><input type="radio" name="adapt" value="0"> Ask the family to accept the program’s original approach.</label>
+<label class="option"><input type="radio" name="adapt" value="1"> Avoid deciding until the family changes its expectations.</label>
+<label class="option"><input type="radio" name="adapt" value="2"> Keep discussing the problem without proposing a next step.</label>
+<label class="option"><input type="radio" name="adapt" value="3"> Identify shared priorities and negotiate a response within necessary boundaries.</label>
+</div><div class="btn-row"><button class="btn" id="adaptCheck">Check answer</button></div><div class="feedback" id="adaptFeedback"></div></article>
+
+<article class="card activity"><div class="section-label">Program responsibility</div><h3>📋 When flexibility has limits</h3>
+<p class="question">What should educators do when a requested change may conflict with licensing or required policy?</p>
+<div class="options">
+<label class="option"><input type="radio" name="policy" value="0"> Explain the boundary clearly, involve appropriate administrators, and explore lawful alternatives.</label>
+<label class="option"><input type="radio" name="policy" value="1"> Ignore the rule if the family feels strongly.</label>
+<label class="option"><input type="radio" name="policy" value="2"> End the conversation immediately.</label>
+<label class="option"><input type="radio" name="policy" value="3"> Tell the family cultural differences are irrelevant to policy.</label>
+</div><div class="btn-row"><button class="btn" id="policyCheck">Check answer</button></div><div class="feedback" id="policyFeedback"></div></article>
+</section>
+
+<section class="card activity" style="margin-top:18px"><div class="section-label">Final self-check</div><h3>Check your understanding</h3>
+<p class="question">Which statement best integrates Esquivel Chapter 7?</p>
+<div class="options">
+<label class="option"><input type="radio" name="final" value="0"> The best conflict strategy is to avoid disagreement whenever possible.</label>
+<label class="option"><input type="radio" name="final" value="1"> Respect means allowing families to determine every program practice.</label>
+<label class="option"><input type="radio" name="final" value="2"> Cultural differences are best managed by applying identical routines.</label>
+<label class="option"><input type="radio" name="final" value="3"> Effective conflict resolution combines relationships, self-reflection, listening, clear boundaries, and collaborative problem-solving.</label>
+</div><div class="btn-row"><button class="btn" id="finalCheck">Check my thinking</button></div><div class="feedback" id="finalFeedback"></div></section>
+
+<aside class="resource-bar"><p><strong>Need a quick review?</strong><br><span class="small">Revisit preventing conflict, navigating cultural differences, and the Acknowledge–Ask–Adapt process before reflecting.</span></p>
+<a class="resource-link" href="https://socialsci.libretexts.org/Bookshelves/Early_Childhood_Education/The_Role_of_Equity_and_Diversity_in_Early_Childhood_Education_(Esquivel_Elam_Paris_and_Tafoya)/07%3A_Effectively_Negotiating_and_Resolving_Conflict_Related_to_Issues_of_Diversity" target="_blank" rel="noopener noreferrer">📖 Return to Esquivel Chapter 7</a></aside>
+
+<section id="reflect" class="card reflection"><div class="kicker">Final reflection</div><h2>Complete this sentence</h2>
+<p><strong>When a family and program disagree, my first responsibility is to…</strong></p>
+<label for="reflectionText" class="sr-only">Your reflection</label><textarea id="reflectionText" placeholder="Type a few words or sentences. This response remains on this page and is not graded or submitted."></textarea>
+<div class="btn-row"><button class="btn" id="compareBtn">Compare My Thinking</button></div>
+<div class="compare-panel" id="comparePanel">
+<div class="compare-box"><h3>The chapter emphasizes…</h3><p>Conflict can be productive when educators build relationships, examine assumptions, and stay curious about families’ perspectives.</p></div>
+<div class="compare-box"><h3>Consider…</h3><p>Did your response include listening, asking questions, protecting the child, or explaining necessary program boundaries?</p></div>
+<div class="compare-box"><h3>Add to your thinking…</h3><p>Not every disagreement ends in full agreement. Respectful professional practice can still preserve clarity, dignity, and collaboration.</p></div>
+</div></section>
+
+<div class="complete" id="completeBox"><div><strong>🌟 Guide complete!</strong><br><span class="small">You practiced preventing conflict, examining assumptions, and using Acknowledge–Ask–Adapt to work through cultural differences.</span></div><button class="btn" id="restartBtn">Restart guide</button></div>
+</main>
+
+<script>
+const state={story:false,conflict:false,match:false,prevent:false,fork:false,acknowledge:false,ask:false,adapt:false,policy:false,final:false,reflect:false};
+const steps=[...document.querySelectorAll('.step')];
+function updateProgress(){const done=Object.values(state).filter(Boolean).length;const pct=Math.round(done/11*100);const bar=document.querySelector('.progress-line');document.getElementById('progressFill').style.width=pct+'%';document.getElementById('progressText').textContent=pct+'%';bar.setAttribute('aria-valuenow',pct);steps.forEach((s,i)=>{s.classList.toggle('done',i<Math.min(4,Math.ceil(done*4/11)));s.classList.toggle('active',i===Math.min(3,Math.floor(done*4/11)))});if(done===11)document.getElementById('completeBox').classList.add('show')}
+function show(box,txt){box.innerHTML=txt;box.classList.add('show')}
+function radioCheck(name,correct,feedbackId,success,retry,key){const c=document.querySelector('input[name='+name+']:checked'),f=document.getElementById(feedbackId);if(!c)return show(f,'⚠️ Choose an answer first.');const ok=Number(c.value)===correct;show(f,ok?'✅ <strong>Correct.</strong> '+success:'↻ <strong>Try again.</strong> '+retry);if(ok){state[key]=true;updateProgress()}}
+document.getElementById('storyDone').onclick=()=>{state.story=true;updateProgress();document.getElementById('explore').scrollIntoView({behavior:'smooth'})};
+document.getElementById('conflictCheck').onclick=()=>radioCheck('conflict',2,'conflictFeedback','The chapter treats conflict as inevitable but potentially constructive when handled with care.','Choose the response that allows disagreement while emphasizing good management.','conflict');
+document.getElementById('checkMatch').onclick=()=>{const ss=[...document.querySelectorAll('.match-row select')],f=document.getElementById('matchFeedback');if(!ss.every(s=>s.value))return show(f,'⚠️ Complete all three matches first.');const n=ss.filter(s=>s.value===s.dataset.answer).length;show(f,n===3?'✅ <strong>Nice work!</strong> Acknowledge, Ask, and Adapt are all matched correctly.':'↻ You matched <strong>'+n+' of 3</strong> correctly. Recheck the three steps and try again.');if(n===3){state.match=true;updateProgress()}};
+document.getElementById('resetMatch').onclick=()=>{document.querySelectorAll('.match-row select').forEach(s=>s.value='');document.getElementById('matchFeedback').classList.remove('show')};
+document.getElementById('preventCheck').onclick=()=>radioCheck('prevent',1,'preventFeedback','Relationship-building and early conversation help educators understand family expectations before misunderstandings escalate.','Choose the preventive, relationship-based response.','prevent');
+document.getElementById('forkCheck').onclick=()=>radioCheck('fork',2,'forkFeedback','The chapter specifically encourages checking family practices and goals before deciding what a child needs.','Gather family context before labeling or correcting.','fork');
+document.getElementById('acknowledgeCheck').onclick=()=>radioCheck('acknowledge',0,'acknowledgeFeedback','Acknowledge begins by recognizing the concern and communicating sincere willingness to understand.','Choose the response that opens dialogue respectfully.','acknowledge');
+document.getElementById('askCheck').onclick=()=>radioCheck('ask',2,'askFeedback','Ask is the information-gathering stage: clarify expectations, meanings, and concerns.','Choose the curious, open-ended question.','ask');
+document.getElementById('adaptCheck').onclick=()=>radioCheck('adapt',3,'adaptFeedback','Adapt seeks common ground and negotiates around priorities and necessary boundaries.','Choose collaborative problem-solving rather than delay or surrender.','adapt');
+document.getElementById('policyCheck').onclick=()=>radioCheck('policy',0,'policyFeedback','Required boundaries still need respectful explanation, administrative support, and exploration of lawful flexibility.','Choose a response that honors both responsibility and partnership.','policy');
+document.getElementById('finalCheck').onclick=()=>radioCheck('final',3,'finalFeedback','The chapter combines family relationships, cultural humility, communication, boundaries, and negotiation.','Choose the comprehensive response.','final');
+document.getElementById('compareBtn').onclick=()=>{document.getElementById('comparePanel').classList.add('show');state.reflect=true;updateProgress();document.getElementById('comparePanel').scrollIntoView({behavior:'smooth',block:'nearest'})};
+document.getElementById('restartBtn').onclick=()=>location.reload();
+updateProgress();
+</script>
+</body></html>

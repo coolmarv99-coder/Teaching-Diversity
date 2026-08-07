@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CLDV-06 Week 2 Interactive Reading Guide</title>
+<style>
+:root{--navy:#173f63;--teal:#287a78;--ink:#172033;--muted:#5c6678;--gold:#e1ad35;--border:#d8deea;--shadow:0 8px 24px rgba(22,32,51,.09);--green:#287a51;--soft:#f5f7fb}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--soft);color:var(--ink);line-height:1.55}
+button,input,textarea,select{font:inherit}button{cursor:pointer}a{color:var(--navy)}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #4e9cf5;outline-offset:2px}
+.sitebar{background:var(--navy);color:#fff;padding:14px 20px}.sitebar-inner{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:12px;font-weight:700}.logo{width:46px;height:46px;border:2px solid #fff;border-radius:12px;display:grid;place-items:center}.small{font-size:.9rem;color:var(--muted)}.sitebar .small{color:#d9e6f5}
+main{max-width:1180px;margin:0 auto;padding:28px 18px 60px}.hero{display:flex;justify-content:space-between;gap:24px;align-items:end;flex-wrap:wrap}h1{font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:.1em 0}.subtitle{font-size:1.08rem;margin:0;color:#39445a}
+.progress-wrap{min-width:260px}.progress-line{height:10px;background:#d9dee7;border-radius:999px;overflow:hidden}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--green),#52a981);transition:width .35s ease}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0}.step{background:#fff;border:1px solid var(--border);border-radius:999px;padding:11px 12px;text-align:center;font-weight:650;color:#667085;text-decoration:none}.step.active{background:#eaf5f3;color:#145854;border-color:#a7d2cf}.step.done{background:#eaf7f1;color:#176847}
+.card{background:#fff;border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}.story{display:grid;grid-template-columns:minmax(300px,44%) 1fr;background:linear-gradient(110deg,#fff6ea,#fff)}.story img{width:100%;height:100%;min-height:430px;object-fit:cover}.story-copy{padding:30px}.kicker{font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:#7d5a23}h2{font-size:1.55rem;margin:.25em 0 .5em}h3{font-size:1.18rem;margin:0 0 12px}.story-note{background:rgba(255,255,255,.88);border-left:5px solid var(--gold);padding:14px 16px;border-radius:12px;margin-top:18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.activity{padding:24px}.question{font-weight:700;margin-bottom:14px}.options{display:grid;gap:10px}.option{display:flex;gap:12px;align-items:flex-start;border:1px solid #ccd3df;border-radius:13px;padding:12px;background:#fff}.feedback{display:none;margin-top:14px;padding:13px 15px;border-radius:13px;background:#edf9f1;border:1px solid #acd7b9}.feedback.show{display:block}
+.match-row{display:grid;grid-template-columns:190px 1fr;gap:12px;align-items:center;margin:10px 0}.term{font-weight:750;background:#edf5ff;border:1px solid #a7c5ef;border-radius:10px;padding:10px}select{width:100%;padding:10px;border:1px solid #bac4d3;border-radius:10px;background:#fff}
+.btn{border:none;border-radius:12px;padding:12px 18px;font-weight:750;background:var(--green);color:#fff;box-shadow:0 4px 12px rgba(40,122,81,.2)}.btn.secondary{background:#fff;color:var(--navy);border:1px solid #aeb9c8;box-shadow:none}.btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
+.resource-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:18px 0;padding:16px 18px;border:1px solid #b9c9dc;border-radius:18px;background:#eef6ff}.resource-bar p{margin:0}.resource-link{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border-radius:12px;padding:11px 15px;font-weight:750;background:#fff;color:var(--navy);border:1px solid #9fb0c5}
+.concept-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.concept{padding:18px;border-radius:18px;border:1px solid var(--border);background:#fff}.concept strong{display:block;margin-bottom:6px}
+.reflection{margin-top:18px;padding:24px;background:linear-gradient(135deg,#f1fbf4,#fff)}textarea{width:100%;min-height:120px;border:1px solid #bbc5d3;border-radius:14px;padding:14px;resize:vertical}.compare-panel{display:none;margin-top:18px}.compare-panel.show{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.compare-box{border-radius:18px;padding:18px;border:1px solid var(--border)}.compare-box:nth-child(1){background:#fff8df}.compare-box:nth-child(2){background:#edf9f5}.compare-box:nth-child(3){background:#f4efff}
+.complete{display:none;margin-top:18px;padding:20px;background:#eaf8f1;border:1px solid #a9d9bf;border-radius:18px;align-items:center;justify-content:space-between;gap:14px}.complete.show{display:flex}.badge{display:inline-block;background:#e8f5ee;color:#176847;border-radius:999px;padding:5px 10px;font-weight:800;font-size:.82rem}.section-label{font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;font-weight:800;color:var(--teal)}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:850px){.story,.grid2{grid-template-columns:1fr}.story img{min-height:240px;max-height:390px}.concept-strip,.compare-panel.show{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}}@media(max-width:520px){main{padding:18px 12px 40px}.sitebar{padding:10px 12px}.steps{grid-template-columns:1fr}.step{text-align:left}.match-row{grid-template-columns:1fr}.activity,.reflection,.story-copy{padding:18px}.complete.show{align-items:flex-start;flex-direction:column}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.progress-fill{transition:none}}
+</style>
+</head>
+<body>
+<header class="sitebar"><div class="sitebar-inner"><div class="brand"><div class="logo" aria-hidden="true">06</div><div>Teaching in a Diverse Society<div class="small">Interactive Reading Guide</div></div></div><div class="small">Week 2 • Esquivel Chapter 2</div></div></header>
+<main>
+<section class="hero" aria-labelledby="page-title"><div><span class="badge">Low-stakes self-check</span> <span class="badge">Notice • Question • Respond</span><h1 id="page-title">More Than Food and Holidays</h1><p class="subtitle">Culture, development, cultural myths, language, and responsive teaching</p></div><div class="progress-wrap"><div style="display:flex;justify-content:space-between;margin-bottom:7px"><strong>Overall progress</strong><span id="progressText">0%</span></div><div class="progress-line" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-fill" id="progressFill"></div></div></div></section>
+<nav class="steps"><a class="step active" href="#story">1. Vignette</a><a class="step" href="#explore">2. Culture</a><a class="step" href="#practice">3. Practice</a><a class="step" href="#reflect">4. Reflect</a></nav>
+<aside class="resource-bar"><p><strong>Keep Esquivel Chapter 2 nearby.</strong><br><span class="small">This guide supports the reading; it does not replace it.</span></p><a class="resource-link" href="https://socialsci.libretexts.org/Bookshelves/Early_Childhood_Education/The_Role_of_Equity_and_Diversity_in_Early_Childhood_Education_(Esquivel_Elam_Paris_and_Tafoya)/02%3A_The_Importance_of_Culture" target="_blank" rel="noopener noreferrer">📖 Open Esquivel Chapter 2</a></aside>
+<aside class="resource-bar"><p><strong>Practice freely.</strong><br><span class="small">Plan for about 15–20 minutes. Responses remain on this page and are not saved, graded, or submitted.</span></p></aside>
+
+<section id="story" class="card story"><img src="images/cldv06-week2-vignette.png" alt="Three diverse college students discuss culture, community, connection, and belonging in an early childhood education classroom"><div class="story-copy"><div class="kicker">Opening vignette</div><h2>“More Than Food and Holidays”</h2>
+<p><strong>Jordan:</strong> “When I hear culture, I usually think about food, music, holidays, clothing, or traditions. Isn’t that mostly what culture means?”</p>
+<p><strong>Aaliyah:</strong> “Those things can be part of culture, but culture goes deeper. It can shape how families communicate, comfort children, show respect, view independence, and relate to teachers.”</p>
+<p><strong>Maya:</strong> “So culture is not just something children bring for a classroom celebration. It affects how they learn, relate to others, and understand themselves.”</p>
+<p><strong>Jordan:</strong> “If teachers only notice the visible parts, they might miss the deeper parts.”</p>
+<p><strong>Aaliyah:</strong> “Exactly. Teachers have to learn from families, not just make assumptions about them.”</p>
+<p><strong>Maya:</strong> “Maybe the challenge is to see culture as part of everyday development, not as something extra we add to the classroom.”</p>
+<div class="story-note"><strong>Think first:</strong> How can educators move beyond surface-level celebrations and become responsive to the deeper cultural experiences of children and families?</div><div class="btn-row"><button class="btn" id="storyDone" type="button">I’ve considered the vignette</button></div></div></section>
+
+<section id="explore" class="grid2">
+<article class="card activity"><div class="section-label">What culture includes</div><h3>🔎 Choose the strongest response</h3><p class="question">Which statement best reflects the chapter’s view of culture?</p><div class="options">
+<label class="option"><input type="radio" name="culture" value="0"> Culture is mostly visible customs and celebrations.</label>
+<label class="option"><input type="radio" name="culture" value="1"> Culture matters mainly during special classroom events.</label>
+<label class="option"><input type="radio" name="culture" value="2"> Culture includes shared meanings, values, practices, communication, and ways of understanding experience.</label>
+<label class="option"><input type="radio" name="culture" value="3"> Culture affects families more than it affects children.</label></div><div class="btn-row"><button class="btn" id="cultureCheck" type="button">Check my thinking</button></div><div class="feedback" id="cultureFeedback"></div></article>
+
+<article class="card activity"><div class="section-label">Core concepts</div><h3>🧩 Match it up</h3><p>Match each concept with the best description.</p>
+<div class="match-row"><div class="term">Surface culture</div><select data-answer="a"><option value="">Choose…</option><option value="a">Visible expressions such as food, dress, music, and holidays</option><option value="b">Underlying beliefs, values, communication, roles, and expectations</option><option value="c">The passing of cultural knowledge through relationships and daily life</option><option value="d">Teaching that responds to children’s cultural and linguistic strengths</option></select></div>
+<div class="match-row"><div class="term">Deep culture</div><select data-answer="b"><option value="">Choose…</option><option value="a">Visible expressions such as food, dress, music, and holidays</option><option value="b">Underlying beliefs, values, communication, roles, and expectations</option><option value="c">The passing of cultural knowledge through relationships and daily life</option><option value="d">Teaching that responds to children’s cultural and linguistic strengths</option></select></div>
+<div class="match-row"><div class="term">Cultural transmission</div><select data-answer="c"><option value="">Choose…</option><option value="a">Visible expressions such as food, dress, music, and holidays</option><option value="b">Underlying beliefs, values, communication, roles, and expectations</option><option value="c">The passing of cultural knowledge through relationships and daily life</option><option value="d">Teaching that responds to children’s cultural and linguistic strengths</option></select></div>
+<div class="match-row"><div class="term">Cultural responsiveness</div><select data-answer="d"><option value="">Choose…</option><option value="a">Visible expressions such as food, dress, music, and holidays</option><option value="b">Underlying beliefs, values, communication, roles, and expectations</option><option value="c">The passing of cultural knowledge through relationships and daily life</option><option value="d">Teaching that responds to children’s cultural and linguistic strengths</option></select></div>
+<div class="btn-row"><button class="btn" id="checkMatch" type="button">Check matches</button><button class="btn secondary" id="resetMatch" type="button">Reset</button></div><div class="feedback" id="matchFeedback"></div></article>
+</section>
+
+<section class="concept-strip"><div class="concept"><strong>🧭 Culture shapes development.</strong>Children learn ways of communicating, relating, solving problems, showing respect, and understanding themselves through cultural contexts.</div><div class="concept"><strong>👪 Families are essential guides.</strong>Teachers cannot infer a family’s beliefs from appearance or group membership; respectful relationships provide context.</div><div class="concept"><strong>🌱 Responsiveness supports learning.</strong>Children participate more fully when their languages, histories, values, and practices are understood and reflected.</div></section>
+
+<section class="grid2">
+<article class="card activity"><div class="section-label">Culture and development</div><h3>🧒 Independence or connection?</h3><p class="question">A teacher expects every preschooler to complete tasks alone, but some families emphasize cooperation and interdependence. What should the teacher do?</p><div class="options">
+<label class="option"><input type="radio" name="development" value="0"> Offer both independent and collaborative pathways.</label>
+<label class="option"><input type="radio" name="development" value="1"> Require independence because it is universally mature.</label>
+<label class="option"><input type="radio" name="development" value="2"> Avoid family input so expectations stay objective.</label>
+<label class="option"><input type="radio" name="development" value="3"> Stop offering independent choices entirely.</label></div><div class="btn-row"><button class="btn" id="developmentCheck" type="button">Check answer</button></div><div class="feedback" id="developmentFeedback"></div></article>
+
+<article class="card activity"><div class="section-label">Myths about culture</div><h3>🪞 Spot the myth</h3><p class="question">Which statement is a cultural myth the chapter asks educators to question?</p><div class="options">
+<label class="option"><input type="radio" name="myth" value="0"> Culture changes across time and settings.</label>
+<label class="option"><input type="radio" name="myth" value="1"> People belong to several cultural groups.</label>
+<label class="option"><input type="radio" name="myth" value="2"> Families can explain their own practices and values.</label>
+<label class="option"><input type="radio" name="myth" value="3"> Everyone from one group shares the same beliefs.</label></div><div class="btn-row"><button class="btn" id="mythCheck" type="button">Check answer</button></div><div class="feedback" id="mythFeedback"></div></article>
+</section>
+
+<section id="practice" class="grid2">
+<article class="card activity"><div class="section-label">Family partnership</div><h3>🤝 Ask, don’t assume</h3><p class="question">A child rarely makes direct eye contact with adults. What is the most culturally responsive first step?</p><div class="options">
+<label class="option"><input type="radio" name="family" value="0"> Correct the child during group time.</label>
+<label class="option"><input type="radio" name="family" value="1"> Record the behavior as disrespectful.</label>
+<label class="option"><input type="radio" name="family" value="2"> Ask the family about communication practices.</label>
+<label class="option"><input type="radio" name="family" value="3"> Require eye contact before responding.</label></div><div class="btn-row"><button class="btn" id="familyCheck" type="button">Check answer</button></div><div class="feedback" id="familyFeedback"></div></article>
+
+<article class="card activity"><div class="section-label">Language and learning</div><h3>🗣️ Supporting home language</h3><p class="question">Which practice best supports a child’s home language and learning?</p><div class="options">
+<label class="option"><input type="radio" name="language" value="0"> Ask the family to stop using the home language.</label>
+<label class="option"><input type="radio" name="language" value="1"> Use English-only materials for consistency.</label>
+<label class="option"><input type="radio" name="language" value="2"> Delay participation until English improves.</label>
+<label class="option"><input type="radio" name="language" value="3"> Include home-language words, books, and family knowledge.</label></div><div class="btn-row"><button class="btn" id="languageCheck" type="button">Check answer</button></div><div class="feedback" id="languageFeedback"></div></article>
+</section>
+
+<section class="grid2">
+<article class="card activity"><div class="section-label">Classroom environment</div><h3>📚 Beyond tokenism</h3><p class="question">Which classroom choice moves beyond surface-level cultural inclusion?</p><div class="options">
+<label class="option"><input type="radio" name="environment" value="0"> Add one international-food activity each year.</label>
+<label class="option"><input type="radio" name="environment" value="1"> Reflect families’ languages and experiences throughout daily materials and routines.</label>
+<label class="option"><input type="radio" name="environment" value="2"> Invite one child to explain an entire culture.</label>
+<label class="option"><input type="radio" name="environment" value="3"> Use the same materials every year to avoid bias.</label></div><div class="btn-row"><button class="btn" id="environmentCheck" type="button">Check answer</button></div><div class="feedback" id="environmentFeedback"></div></article>
+
+<article class="card activity"><div class="section-label">Teacher reflection</div><h3>🔍 Examine the lens</h3><p class="question">What should educators do when a family practice differs from their own expectations?</p><div class="options">
+<label class="option"><input type="radio" name="reflection" value="0"> Examine assumptions and seek context.</label>
+<label class="option"><input type="radio" name="reflection" value="1"> Treat the difference as a deficit.</label>
+<label class="option"><input type="radio" name="reflection" value="2"> Avoid discussing the practice.</label>
+<label class="option"><input type="radio" name="reflection" value="3"> Apply one rule without conversation.</label></div><div class="btn-row"><button class="btn" id="reflectionCheck" type="button">Check answer</button></div><div class="feedback" id="reflectionFeedback"></div></article>
+</section>
+
+<section class="card activity" style="margin-top:18px"><div class="section-label">Final self-check</div><h3>Check your understanding</h3><p class="question">Which statement best integrates Esquivel Chapter 2?</p><div class="options">
+<label class="option"><input type="radio" name="final" value="0"> Cultural responsiveness is mainly adding celebrations.</label>
+<label class="option"><input type="radio" name="final" value="1"> Responsive teaching learns from families and connects culture and language to daily practice.</label>
+<label class="option"><input type="radio" name="final" value="2"> Families should adapt to the program’s established culture.</label>
+<label class="option"><input type="radio" name="final" value="3"> Culture matters, but teaching should remain culturally neutral.</label></div><div class="btn-row"><button class="btn" id="finalCheck" type="button">Check my thinking</button></div><div class="feedback" id="finalFeedback"></div></section>
+
+<aside class="resource-bar"><p><strong>Need a quick review?</strong><br><span class="small">Revisit Sections 2.2–2.4 before completing the reflection.</span></p><a class="resource-link" href="https://socialsci.libretexts.org/Bookshelves/Early_Childhood_Education/The_Role_of_Equity_and_Diversity_in_Early_Childhood_Education_(Esquivel_Elam_Paris_and_Tafoya)/02%3A_The_Importance_of_Culture" target="_blank" rel="noopener noreferrer">📖 Return to Esquivel Chapter 2</a></aside>
+
+<section id="reflect" class="card reflection"><div class="kicker">Final reflection</div><h2>Complete this sentence</h2><p><strong>Moving beyond food and holidays means an educator must…</strong></p><label for="reflectionText" class="sr-only">Your reflection</label><textarea id="reflectionText" placeholder="Type a few words or sentences. This response remains on this page and is not graded or submitted."></textarea><div class="btn-row"><button class="btn" id="compareBtn" type="button">Compare My Thinking</button></div><div class="compare-panel" id="comparePanel"><div class="compare-box"><h3>The chapter emphasizes…</h3><p>Culture shapes everyday development, communication, relationships, expectations, and learning.</p></div><div class="compare-box"><h3>Consider…</h3><p>Did your response mention listening to families, supporting language, examining assumptions, or changing daily practice?</p></div><div class="compare-box"><h3>Add to your thinking…</h3><p>Responsive teaching moves from appreciation toward cultural empowerment by valuing family knowledge and cultural strengths.</p></div></div></section>
+
+<div class="complete" id="completeBox"><div><strong>🌟 Guide complete!</strong><br><span class="small">You distinguished surface and deep culture, challenged myths, and applied cultural and linguistic responsiveness.</span></div><button class="btn" id="restartBtn" type="button">Restart guide</button></div>
+</main>
+<script>
+const state={story:false,culture:false,match:false,development:false,myth:false,family:false,language:false,environment:false,reflection:false,final:false,reflect:false};const steps=[...document.querySelectorAll('.step')];
+function updateProgress(){const done=Object.values(state).filter(Boolean).length;const pct=Math.round(done/11*100);const bar=document.querySelector('.progress-line');document.getElementById('progressFill').style.width=pct+'%';document.getElementById('progressText').textContent=pct+'%';bar.setAttribute('aria-valuenow',pct);steps.forEach((s,i)=>{s.classList.toggle('done',i<Math.min(4,Math.ceil(done*4/11)));s.classList.toggle('active',i===Math.min(3,Math.floor(done*4/11)))});if(done===11)document.getElementById('completeBox').classList.add('show')}
+function show(box,html){box.innerHTML=html;box.classList.add('show')}
+function radioCheck(name,correct,feedbackId,success,retry,key){const c=document.querySelector('input[name='+name+']:checked'),f=document.getElementById(feedbackId);if(!c)return show(f,'⚠️ Choose an answer first.');const ok=Number(c.value)===correct;show(f,ok?'✅ <strong>Correct.</strong> '+success:'↻ <strong>Try again.</strong> '+retry);if(ok){state[key]=true;updateProgress()}}
+document.getElementById('storyDone').addEventListener('click',()=>{state.story=true;updateProgress();document.getElementById('explore').scrollIntoView({behavior:'smooth'})});
+document.getElementById('cultureCheck').addEventListener('click',()=>radioCheck('culture',2,'cultureFeedback','Culture includes visible practices and deeper meanings, values, communication, and expectations.','Choose the answer that goes beyond celebrations.','culture'));
+document.getElementById('checkMatch').addEventListener('click',()=>{const ss=[...document.querySelectorAll('.match-row select')],f=document.getElementById('matchFeedback');if(!ss.every(s=>s.value))return show(f,'⚠️ Complete all four matches first.');const n=ss.filter(s=>s.value===s.dataset.answer).length;show(f,n===4?'✅ <strong>Nice work!</strong> All four concepts are matched correctly.':'↻ You matched <strong>'+n+' of 4</strong> correctly. Recheck the distinctions and try again.');if(n===4){state.match=true;updateProgress()}});
+document.getElementById('resetMatch').addEventListener('click',()=>{document.querySelectorAll('.match-row select').forEach(s=>s.value='');document.getElementById('matchFeedback').classList.remove('show')});
+document.getElementById('developmentCheck').addEventListener('click',()=>radioCheck('development',0,'developmentFeedback','Offering both pathways respects different cultural goals without eliminating choice.','Look for flexibility rather than one universal expectation.','development'));
+document.getElementById('mythCheck').addEventListener('click',()=>radioCheck('myth',3,'mythFeedback','Assuming all members of a group are alike turns culture into a stereotype.','Choose the statement that overgeneralizes.','myth'));
+document.getElementById('familyCheck').addEventListener('click',()=>radioCheck('family',2,'familyFeedback','Family context can clarify whether eye contact carries the same meaning across settings.','Ask before assigning meaning.','family'));
+document.getElementById('languageCheck').addEventListener('click',()=>radioCheck('language',3,'languageFeedback','Home language supports identity, relationships, and continued learning.','Choose the option that adds linguistic access.','language'));
+document.getElementById('environmentCheck').addEventListener('click',()=>radioCheck('environment',1,'environmentFeedback','Daily, authentic representation is more responsive than occasional activities.','Choose ongoing integration, not token celebration.','environment'));
+document.getElementById('reflectionCheck').addEventListener('click',()=>radioCheck('reflection',0,'reflectionFeedback','Cultural responsiveness begins with reflection, curiosity, and context.','Choose inquiry over judgment.','reflection'));
+document.getElementById('finalCheck').addEventListener('click',()=>radioCheck('final',1,'finalFeedback','Responsive educators learn from families and embed culture and language throughout daily practice.','Choose the response that links family knowledge to teaching.','final'));
+document.getElementById('compareBtn').addEventListener('click',()=>{document.getElementById('comparePanel').classList.add('show');state.reflect=true;updateProgress();document.getElementById('comparePanel').scrollIntoView({behavior:'smooth',block:'nearest'})});
+document.getElementById('restartBtn').addEventListener('click',()=>location.reload());updateProgress();
+</script>
+</body>
+</html>
