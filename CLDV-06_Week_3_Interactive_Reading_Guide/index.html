@@ -44,15 +44,15 @@ main{max-width:1180px;margin:0 auto;padding:28px 18px 60px}.hero{display:flex;ju
 <section id="explore" class="grid2">
 <article class="card activity"><div class="section-label">Identity begins early</div><h3>🔎 Choose the strongest response</h3><p class="question">Which statement best reflects the chapter’s view of identity development?</p><div class="options">
 <label class="option"><input type="radio" name="identity" value="0"> Identity begins when children enter adolescence.</label>
-<label class="option"><input type="radio" name="identity" value="1"> Identity is mainly private and unaffected by social experience.</label>
-<label class="option"><input type="radio" name="identity" value="2"> Identity begins early and develops through self-awareness, relationships, play, peers, and culture.</label>
-<label class="option"><input type="radio" name="identity" value="3"> Identity is fixed once a child recognizes their name.</label></div><div class="btn-row"><button class="btn" id="identityCheck" type="button">Check my thinking</button></div><div class="feedback" id="identityFeedback"></div></article>
+<label class="option"><input type="radio" name="identity" value="1"> Identity is primarily an internal trait, so social experiences have little influence on its development.</label>
+<label class="option"><input type="radio" name="identity" value="2"> Identity is fixed once a child recognizes their name.</label>
+<label class="option"><input type="radio" name="identity" value="3"> Identity begins early and develops through relationships, play, peers, and culture.</label></div><div class="btn-row"><button class="btn" id="identityCheck" type="button">Check my thinking</button></div><div class="feedback" id="identityFeedback"></div></article>
 
 <article class="card activity"><div class="section-label">Core concepts</div><h3>🧩 Match it up</h3><p>Match each concept with the best description.</p>
-<div class="match-row"><div class="term">Self-identity</div><select data-answer="a"><option value="">Choose…</option><option value="a">A child’s developing sense of personal characteristics and individuality</option><option value="b">Identity connected to groups, roles, communities, and social categories</option><option value="c">Learning about self and others through interaction with age-mates</option><option value="d">Exploring roles, relationships, feelings, and possibilities through activity</option></select></div>
-<div class="match-row"><div class="term">Social identity</div><select data-answer="b"><option value="">Choose…</option><option value="a">A child’s developing sense of personal characteristics and individuality</option><option value="b">Identity connected to groups, roles, communities, and social categories</option><option value="c">Learning about self and others through interaction with age-mates</option><option value="d">Exploring roles, relationships, feelings, and possibilities through activity</option></select></div>
-<div class="match-row"><div class="term">Peers</div><select data-answer="c"><option value="">Choose…</option><option value="a">A child’s developing sense of personal characteristics and individuality</option><option value="b">Identity connected to groups, roles, communities, and social categories</option><option value="c">Learning about self and others through interaction with age-mates</option><option value="d">Exploring roles, relationships, feelings, and possibilities through activity</option></select></div>
-<div class="match-row"><div class="term">Play</div><select data-answer="d"><option value="">Choose…</option><option value="a">A child’s developing sense of personal characteristics and individuality</option><option value="b">Identity connected to groups, roles, communities, and social categories</option><option value="c">Learning about self and others through interaction with age-mates</option><option value="d">Exploring roles, relationships, feelings, and possibilities through activity</option></select></div>
+<div class="match-row"><div class="term">Self-identity</div><select data-answer="a"><option value="">Choose…</option><option value="d">Exploring roles, relationships, feelings, and possibilities through activity</option><option value="b">Identity connected to groups, roles, communities, and social categories</option><option value="c">Learning about self and others through interaction with age-mates</option><option value="a">A child’s developing sense of personal characteristics and individuality</option></select></div>
+<div class="match-row"><div class="term">Social identity</div><select data-answer="b"><option value="">Choose…</option><option value="d">Exploring roles, relationships, feelings, and possibilities through activity</option><option value="b">Identity connected to groups, roles, communities, and social categories</option><option value="c">Learning about self and others through interaction with age-mates</option><option value="a">A child’s developing sense of personal characteristics and individuality</option></select></div>
+<div class="match-row"><div class="term">Peers</div><select data-answer="c"><option value="">Choose…</option><option value="d">Exploring roles, relationships, feelings, and possibilities through activity</option><option value="b">Identity connected to groups, roles, communities, and social categories</option><option value="c">Learning about self and others through interaction with age-mates</option><option value="a">A child’s developing sense of personal characteristics and individuality</option></select></div>
+<div class="match-row"><div class="term">Play</div><select data-answer="d"><option value="">Choose…</option><option value="d">Exploring roles, relationships, feelings, and possibilities through activity</option><option value="b">Identity connected to groups, roles, communities, and social categories</option><option value="c">Learning about self and others through interaction with age-mates</option><option value="a">A child’s developing sense of personal characteristics and individuality</option></select></div>
 <div class="btn-row"><button class="btn" id="checkMatch" type="button">Check matches</button><button class="btn secondary" id="resetMatch" type="button">Reset</button></div><div class="feedback" id="matchFeedback"></div></article>
 </section>
 
@@ -60,50 +60,50 @@ main{max-width:1180px;margin:0 auto;padding:28px 18px 60px}.hero{display:flex;ju
 
 <section class="grid2">
 <article class="card activity"><div class="section-label">Role of peers</div><h3>🤝 What can peers teach?</h3><p class="question">Which outcome is most closely connected to peer interaction?</p><div class="options">
-<label class="option"><input type="radio" name="peers" value="0"> Children practice comparison, cooperation, conflict, and belonging.</label>
-<label class="option"><input type="radio" name="peers" value="1"> Children stop noticing social differences.</label>
-<label class="option"><input type="radio" name="peers" value="2"> Children develop identity without adult influence.</label>
+<label class="option"><input type="radio" name="peers" value="0"> Children stop noticing social differences.</label>
+<label class="option"><input type="radio" name="peers" value="1"> Children practice cooperation, comparison, conflict, and belonging.</label>
+<label class="option"><input type="radio" name="peers" value="2"> Children develop identity mainly through peers, so adult messages and classroom environments matter very little.</label>
 <label class="option"><input type="radio" name="peers" value="3"> Children learn only academic vocabulary.</label></div><div class="btn-row"><button class="btn" id="peersCheck" type="button">Check answer</button></div><div class="feedback" id="peersFeedback"></div></article>
 
 <article class="card activity"><div class="section-label">Importance of play</div><h3>🎭 More than pretending</h3><p class="question">Why is play important for identity development?</p><div class="options">
 <label class="option"><input type="radio" name="play" value="0"> It keeps identity separate from relationships.</label>
-<label class="option"><input type="radio" name="play" value="1"> It lets children test roles, feelings, abilities, and social meanings.</label>
-<label class="option"><input type="radio" name="play" value="2"> It prevents children from noticing differences.</label>
-<label class="option"><input type="radio" name="play" value="3"> It replaces the need for teacher observation.</label></div><div class="btn-row"><button class="btn" id="playCheck" type="button">Check answer</button></div><div class="feedback" id="playFeedback"></div></article>
+<label class="option"><input type="radio" name="play" value="1"> It prevents children from noticing differences.</label>
+<label class="option"><input type="radio" name="play" value="2"> It lets children explore roles, feelings, abilities, and social meanings.</label>
+<label class="option"><input type="radio" name="play" value="3"> It replaces the need for teacher observation because children reveal their identities completely during play.</label></div><div class="btn-row"><button class="btn" id="playCheck" type="button">Check answer</button></div><div class="feedback" id="playFeedback"></div></article>
 </section>
 
 <section id="practice" class="grid2">
 <article class="card activity"><div class="section-label">Classroom messages</div><h3>📚 Who is visible?</h3><p class="question">A classroom library rarely shows children who share one child’s family structure. What is the most responsive action?</p><div class="options">
-<label class="option"><input type="radio" name="materials" value="0"> Explain that not every family can appear in books.</label>
-<label class="option"><input type="radio" name="materials" value="1"> Ask the child to bring one photograph for a special display.</label>
-<label class="option"><input type="radio" name="materials" value="2"> Remove all family stories to avoid imbalance.</label>
-<label class="option"><input type="radio" name="materials" value="3"> Add authentic books and images reflecting varied family structures.</label></div><div class="btn-row"><button class="btn" id="materialsCheck" type="button">Check answer</button></div><div class="feedback" id="materialsFeedback"></div></article>
+<label class="option"><input type="radio" name="materials" value="0"> Add authentic books and images of varied families.</label>
+<label class="option"><input type="radio" name="materials" value="1"> Explain that not every family can appear in books.</label>
+<label class="option"><input type="radio" name="materials" value="2"> Ask the child to bring one photograph for a special display.</label>
+<label class="option"><input type="radio" name="materials" value="3"> Remove all family stories to avoid imbalance.</label></div><div class="btn-row"><button class="btn" id="materialsCheck" type="button">Check answer</button></div><div class="feedback" id="materialsFeedback"></div></article>
 
 <article class="card activity"><div class="section-label">Peer exclusion</div><h3>🚪 “You can’t play”</h3><p class="question">A child is excluded from pretend play because peers say, “Only boys can be firefighters.” What should the teacher do?</p><div class="options">
-<label class="option"><input type="radio" name="exclusion" value="0"> Wait to see whether the children solve it alone.</label>
-<label class="option"><input type="radio" name="exclusion" value="1"> Redirect the excluded child to another center.</label>
-<label class="option"><input type="radio" name="exclusion" value="2"> State that every child may choose roles and help the group reopen play.</label>
+<label class="option"><input type="radio" name="exclusion" value="0"> Wait to see whether the children resolve the exclusion alone, because adult involvement may interrupt peer learning.</label>
+<label class="option"><input type="radio" name="exclusion" value="1"> Affirm equal role choice, then help the children reopen play.</label>
+<label class="option"><input type="radio" name="exclusion" value="2"> Redirect the excluded child to another center.</label>
 <label class="option"><input type="radio" name="exclusion" value="3"> End pretend play for the whole class.</label></div><div class="btn-row"><button class="btn" id="exclusionCheck" type="button">Check answer</button></div><div class="feedback" id="exclusionFeedback"></div></article>
 </section>
 
 <section class="grid2">
 <article class="card activity"><div class="section-label">Culture and identity</div><h3>🌍 Context matters</h3><p class="question">Which statement best describes culture’s role in identity?</p><div class="options">
 <label class="option"><input type="radio" name="culture" value="0"> Culture affects identity only during holidays.</label>
-<label class="option"><input type="radio" name="culture" value="1"> Culture determines every child’s choices in the same way.</label>
+<label class="option"><input type="radio" name="culture" value="1"> Culture determines the choices of children from the same group in largely the same predictable way.</label>
 <label class="option"><input type="radio" name="culture" value="2"> Culture matters less than classroom routines.</label>
-<label class="option"><input type="radio" name="culture" value="3"> Culture is one influence among family, school, community, and social groups.</label></div><div class="btn-row"><button class="btn" id="cultureCheck" type="button">Check answer</button></div><div class="feedback" id="cultureFeedback"></div></article>
+<label class="option"><input type="radio" name="culture" value="3"> Culture is one influence alongside family, school, and community.</label></div><div class="btn-row"><button class="btn" id="cultureCheck" type="button">Check answer</button></div><div class="feedback" id="cultureFeedback"></div></article>
 
 <article class="card activity"><div class="section-label">Teacher language</div><h3>💬 Identity-affirming feedback</h3><p class="question">Which teacher response best supports a child’s developing identity?</p><div class="options">
-<label class="option"><input type="radio" name="language" value="0"> “You are always the quiet one.”</label>
-<label class="option"><input type="radio" name="language" value="1"> “You used several ideas and kept working when it was difficult.”</label>
+<label class="option"><input type="radio" name="language" value="0"> “You used several ideas and kept working when it was difficult.”</label>
+<label class="option"><input type="radio" name="language" value="1"> “You are always the quiet one.”</label>
 <label class="option"><input type="radio" name="language" value="2"> “Girls are usually better at this.”</label>
 <label class="option"><input type="radio" name="language" value="3"> “You should act more like your friend.”</label></div><div class="btn-row"><button class="btn" id="languageCheck" type="button">Check answer</button></div><div class="feedback" id="languageFeedback"></div></article>
 </section>
 
 <section class="card activity" style="margin-top:18px"><div class="section-label">Final self-check</div><h3>Check your understanding</h3><p class="question">Which statement best integrates Esquivel Chapter 3?</p><div class="options">
-<label class="option"><input type="radio" name="final" value="0"> Identity grows through self-awareness, peers, play, culture, and social messages.</label>
-<label class="option"><input type="radio" name="final" value="1"> Identity is mostly complete before children enter school.</label>
-<label class="option"><input type="radio" name="final" value="2"> Classroom materials have little effect on belonging.</label>
+<label class="option"><input type="radio" name="final" value="0"> Identity is mostly complete before children enter school.</label>
+<label class="option"><input type="radio" name="final" value="1"> Classroom materials have little effect on belonging.</label>
+<label class="option"><input type="radio" name="final" value="2"> Identity grows through self-awareness, peers, play, culture, and social messages.</label>
 <label class="option"><input type="radio" name="final" value="3"> Teachers should avoid discussing identity differences.</label></div><div class="btn-row"><button class="btn" id="finalCheck" type="button">Check my thinking</button></div><div class="feedback" id="finalFeedback"></div></section>
 
 <aside class="resource-bar"><p><strong>Need a quick review?</strong><br><span class="small">Revisit Sections 3.1–3.3 before completing the reflection.</span></p><a class="resource-link" href="https://socialsci.libretexts.org/Bookshelves/Early_Childhood_Education/The_Role_of_Equity_and_Diversity_in_Early_Childhood_Education_(Esquivel_Elam_Paris_and_Tafoya)/03%3A_The_Development_of_Identity_in_Children" target="_blank" rel="noopener noreferrer">📖 Return to Esquivel Chapter 3</a></aside>
@@ -118,16 +118,16 @@ function updateProgress(){const done=Object.values(state).filter(Boolean).length
 function show(box,html){box.innerHTML=html;box.classList.add('show')}
 function radioCheck(name,correct,feedbackId,success,retry,key){const c=document.querySelector('input[name='+name+']:checked'),f=document.getElementById(feedbackId);if(!c)return show(f,'⚠️ Choose an answer first.');const ok=Number(c.value)===correct;show(f,ok?'✅ <strong>Correct.</strong> '+success:'↻ <strong>Try again.</strong> '+retry);if(ok){state[key]=true;updateProgress()}}
 document.getElementById('storyDone').addEventListener('click',()=>{state.story=true;updateProgress();document.getElementById('explore').scrollIntoView({behavior:'smooth'})});
-document.getElementById('identityCheck').addEventListener('click',()=>radioCheck('identity',2,'identityFeedback','Identity develops early through personal and social experiences.','Choose the answer that connects self-awareness with relationships, play, peers, and culture.','identity'));
+document.getElementById('identityCheck').addEventListener('click',()=>radioCheck('identity',3,'identityFeedback','Identity develops early through personal and social experiences.','Choose the answer that connects self-awareness with relationships, play, peers, and culture.','identity'));
 document.getElementById('checkMatch').addEventListener('click',()=>{const ss=[...document.querySelectorAll('.match-row select')],f=document.getElementById('matchFeedback');if(!ss.every(s=>s.value))return show(f,'⚠️ Complete all four matches first.');const n=ss.filter(s=>s.value===s.dataset.answer).length;show(f,n===4?'✅ <strong>Nice work!</strong> All four concepts are matched correctly.':'↻ You matched <strong>'+n+' of 4</strong> correctly. Recheck the definitions and try again.');if(n===4){state.match=true;updateProgress()}});
 document.getElementById('resetMatch').addEventListener('click',()=>{document.querySelectorAll('.match-row select').forEach(s=>s.value='');document.getElementById('matchFeedback').classList.remove('show')});
-document.getElementById('peersCheck').addEventListener('click',()=>radioCheck('peers',0,'peersFeedback','Peers help children practice social comparison, cooperation, conflict, and belonging.','Choose the response about social learning with age-mates.','peers'));
-document.getElementById('playCheck').addEventListener('click',()=>radioCheck('play',1,'playFeedback','Play gives children a flexible space to explore roles, abilities, feelings, and social meanings.','Choose the response that treats play as identity exploration.','play'));
-document.getElementById('materialsCheck').addEventListener('click',()=>radioCheck('materials',3,'materialsFeedback','Authentic representation helps children see their lives as valued parts of the classroom community.','Choose everyday inclusion rather than a special one-time display.','materials'));
-document.getElementById('exclusionCheck').addEventListener('click',()=>radioCheck('exclusion',2,'exclusionFeedback','The teacher should challenge the limiting message and support renewed participation.','Choose the response that addresses bias and restores access to play.','exclusion'));
+document.getElementById('peersCheck').addEventListener('click',()=>radioCheck('peers',1,'peersFeedback','Peers help children practice social comparison, cooperation, conflict, and belonging.','Choose the response about social learning with age-mates.','peers'));
+document.getElementById('playCheck').addEventListener('click',()=>radioCheck('play',2,'playFeedback','Play gives children a flexible space to explore roles, abilities, feelings, and social meanings.','Choose the response that treats play as identity exploration.','play'));
+document.getElementById('materialsCheck').addEventListener('click',()=>radioCheck('materials',0,'materialsFeedback','Authentic representation helps children see their lives as valued parts of the classroom community.','Choose everyday inclusion rather than a special one-time display.','materials'));
+document.getElementById('exclusionCheck').addEventListener('click',()=>radioCheck('exclusion',1,'exclusionFeedback','The teacher should challenge the limiting message and support renewed participation.','Choose the response that addresses bias and restores access to play.','exclusion'));
 document.getElementById('cultureCheck').addEventListener('click',()=>radioCheck('culture',3,'cultureFeedback','Culture interacts with family, school, community, religion, ancestry, and social groups.','Choose the response that recognizes several influences without stereotyping.','culture'));
-document.getElementById('languageCheck').addEventListener('click',()=>radioCheck('language',1,'languageFeedback','Specific process feedback supports competence without fixing the child into a label.','Choose feedback that describes effort and strategy rather than identity stereotypes.','language'));
-document.getElementById('finalCheck').addEventListener('click',()=>radioCheck('final',0,'finalFeedback','The chapter presents identity as shaped by self-awareness and social-cultural experiences.','Choose the response that integrates the chapter’s three learning objectives.','final'));
+document.getElementById('languageCheck').addEventListener('click',()=>radioCheck('language',0,'languageFeedback','Specific process feedback supports competence without fixing the child into a label.','Choose feedback that describes effort and strategy rather than identity stereotypes.','language'));
+document.getElementById('finalCheck').addEventListener('click',()=>radioCheck('final',2,'finalFeedback','The chapter presents identity as shaped by self-awareness and social-cultural experiences.','Choose the response that integrates the chapter’s three learning objectives.','final'));
 document.getElementById('compareBtn').addEventListener('click',()=>{document.getElementById('comparePanel').classList.add('show');state.reflect=true;updateProgress();document.getElementById('comparePanel').scrollIntoView({behavior:'smooth',block:'nearest'})});
 document.getElementById('restartBtn').addEventListener('click',()=>location.reload());updateProgress();
 </script>
