@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CLDV-06 Week 6 Interactive Reading Guide</title>
+<style>
+:root{--navy:#173f63;--teal:#287a78;--ink:#172033;--muted:#5c6678;--gold:#e1ad35;--border:#d8deea;--shadow:0 8px 24px rgba(22,32,51,.09);--green:#287a51;--soft:#f5f7fb}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--soft);color:var(--ink);line-height:1.55}
+button,input,textarea,select{font:inherit}button{cursor:pointer}a{color:var(--navy)}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #4e9cf5;outline-offset:2px}
+.sitebar{background:var(--navy);color:#fff;padding:14px 20px}.sitebar-inner{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700}.logo{width:46px;height:46px;border:2px solid #fff;border-radius:12px;display:grid;place-items:center}
+.small{font-size:.9rem;color:var(--muted)}.sitebar .small{color:#d9e6f5}main{max-width:1180px;margin:0 auto;padding:28px 18px 60px}
+.hero{display:flex;justify-content:space-between;gap:24px;align-items:end;flex-wrap:wrap}h1{font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:.1em 0}
+.subtitle{font-size:1.08rem;margin:0;color:#39445a}.progress-wrap{min-width:260px}.progress-line{height:10px;background:#d9dee7;border-radius:999px;overflow:hidden}
+.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--green),#52a981);transition:width .35s ease}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0}.step{background:#fff;border:1px solid var(--border);border-radius:999px;padding:11px 12px;text-align:center;font-weight:650;color:#667085;text-decoration:none}
+.step.active{background:#eaf5f3;color:#145854;border-color:#a7d2cf}.step.done{background:#eaf7f1;color:#176847}
+.card{background:#fff;border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}
+.story{display:grid;grid-template-columns:minmax(300px,44%) 1fr;background:linear-gradient(110deg,#fff4ef,#fff)}.story img{width:100%;height:100%;min-height:430px;object-fit:cover}
+.story-copy{padding:30px}.kicker{font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:#8b4b37}
+h2{font-size:1.55rem;margin:.25em 0 .5em}h3{font-size:1.18rem;margin:0 0 12px}.story-note{background:rgba(255,255,255,.88);border-left:5px solid var(--gold);padding:14px 16px;border-radius:12px;margin-top:18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.activity{padding:24px}.question{font-weight:700;margin-bottom:14px}.options{display:grid;gap:10px}
+.option{display:flex;gap:12px;align-items:flex-start;border:1px solid #ccd3df;border-radius:13px;padding:12px;background:#fff}.feedback{display:none;margin-top:14px;padding:13px 15px;border-radius:13px;background:#edf9f1;border:1px solid #acd7b9}
+.feedback.show{display:block}.match-row{display:grid;grid-template-columns:190px 1fr;gap:12px;align-items:center;margin:10px 0}.term{font-weight:750;background:#edf5ff;border:1px solid #a7c5ef;border-radius:10px;padding:10px}
+select{width:100%;padding:10px;border:1px solid #bac4d3;border-radius:10px;background:#fff}.btn{border:none;border-radius:12px;padding:12px 18px;font-weight:750;background:var(--green);color:#fff;box-shadow:0 4px 12px rgba(40,122,81,.2)}
+.btn.secondary{background:#fff;color:var(--navy);border:1px solid #aeb9c8;box-shadow:none}.btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
+.resource-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:18px 0;padding:16px 18px;border:1px solid #b9c9dc;border-radius:18px;background:#eef6ff}
+.resource-bar p{margin:0}.resource-link{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border-radius:12px;padding:11px 15px;font-weight:750;background:#fff;color:var(--navy);border:1px solid #9fb0c5}
+.concept-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.concept{padding:18px;border-radius:18px;border:1px solid var(--border);background:#fff}.concept strong{display:block;margin-bottom:6px}
+.reflection{margin-top:18px;padding:24px;background:linear-gradient(135deg,#f1fbf4,#fff)}textarea{width:100%;min-height:120px;border:1px solid #bbc5d3;border-radius:14px;padding:14px;resize:vertical}
+.compare-panel{display:none;margin-top:18px}.compare-panel.show{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.compare-box{border-radius:18px;padding:18px;border:1px solid var(--border)}
+.compare-box:nth-child(1){background:#fff8df}.compare-box:nth-child(2){background:#edf9f5}.compare-box:nth-child(3){background:#f4efff}
+.complete{display:none;margin-top:18px;padding:20px;background:#eaf8f1;border:1px solid #a9d9bf;border-radius:18px;align-items:center;justify-content:space-between;gap:14px}.complete.show{display:flex}
+.badge{display:inline-block;background:#e8f5ee;color:#176847;border-radius:999px;padding:5px 10px;font-weight:800;font-size:.82rem}.section-label{font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;font-weight:800;color:var(--teal)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:850px){.story,.grid2{grid-template-columns:1fr}.story img{min-height:240px;max-height:390px}.concept-strip,.compare-panel.show{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){main{padding:18px 12px 40px}.sitebar{padding:10px 12px}.steps{grid-template-columns:1fr}.step{text-align:left}.match-row{grid-template-columns:1fr}.activity,.reflection,.story-copy{padding:18px}.complete.show{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="sitebar"><div class="sitebar-inner"><div class="brand"><div class="logo">06</div><div>Teaching in a Diverse Society<div class="small">Interactive Reading Guide</div></div></div><div class="small">Week 6 • Esquivel Chapter 6</div></div></header>
+<main>
+<section class="hero"><div><span class="badge">Low-stakes self-check</span> <span class="badge">Notice • Respond • Act</span><h1>What Should the Teacher Say?</h1><p class="subtitle">Using anti-bias curriculum in everyday classroom moments</p></div>
+<div class="progress-wrap"><div style="display:flex;justify-content:space-between;margin-bottom:7px"><strong>Overall progress</strong><span id="progressText">0%</span></div><div class="progress-line" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-fill" id="progressFill"></div></div></div></section>
+
+<nav class="steps"><a class="step active" href="#story">1. Vignette</a><a class="step" href="#explore">2. Anti-Bias Goals</a><a class="step" href="#practice">3. Teacher Response</a><a class="step" href="#reflect">4. Reflect</a></nav>
+
+<aside class="resource-bar"><p><strong>Keep Esquivel Chapter 6 nearby.</strong><br><span class="small">This guide supports the reading; it does not replace it.</span></p><a class="resource-link" href="https://socialsci.libretexts.org/Bookshelves/Early_Childhood_Education/The_Role_of_Equity_and_Diversity_in_Early_Childhood_Education_(Esquivel_Elam_Paris_and_Tafoya)/06%3A_Using_Anti-Bias_Curriculum" target="_blank" rel="noopener noreferrer">📖 Open Esquivel Chapter 6</a></aside>
+<aside class="resource-bar"><p><strong>Practice freely.</strong><br><span class="small">Plan for about 15–20 minutes. Responses remain on this page and are not saved, graded, or submitted.</span></p></aside>
+
+<section id="story" class="card story">
+<img src="images/cldv06-week6-vignette.png" alt="Three diverse college students discuss anti-bias curriculum, inclusion, and belonging in an early childhood education classroom">
+<div class="story-copy"><div class="kicker">Opening vignette</div><h2>“What Should the Teacher Say?”</h2>
+<p><strong>Jordan:</strong> “I understand having diverse books, dolls, music, and classroom materials. But when people say anti-bias curriculum, it sounds more intense. Are young children really ready for that?”</p>
+<p><strong>Aaliyah:</strong> “I don’t think it means giving children adult-level lectures. It means helping them notice fairness, respect differences, and speak up when someone is treated unfairly.”</p>
+<p><strong>Maya:</strong> “Like if a child says, ‘You can’t play because your skin is too dark,’ or ‘Boys can’t wear that,’ the teacher shouldn’t just ignore it or quickly change the subject.”</p>
+<p><strong>Jordan:</strong> “So anti-bias teaching is not about making children feel guilty. It’s about helping them understand that words and actions can include people or hurt people.”</p>
+<p><strong>Aaliyah:</strong> “Children are already noticing differences. Teachers can help them talk about those differences with respect instead of silence or shame.”</p>
+<p><strong>Maya:</strong> “Maybe anti-bias curriculum means we don’t wait until children are older to teach fairness. We help them practice it in everyday classroom moments.”</p>
+<div class="story-note"><strong>Think first:</strong> How can early childhood educators respond to biased comments or unfair behavior in ways that are developmentally appropriate, respectful, and supportive of all children?</div>
+<div class="btn-row"><button class="btn" id="storyDone">I’ve considered the vignette</button></div></div>
+</section>
+
+<section id="explore" class="grid2">
+<article class="card activity"><div class="section-label">Anti-bias approach</div><h3>🔎 Choose the strongest response</h3>
+<p class="question">What best describes anti-bias teaching with young children?</p>
+<div class="options">
+<label class="option"><input type="radio" name="approach" value="0"> Avoid discussing differences until children are older, overall.</label>
+<label class="option"><input type="radio" name="approach" value="1"> Build identity, respect differences, notice unfairness, and practice action.</label>
+<label class="option"><input type="radio" name="approach" value="2"> Teach children that everyone is exactly the same.</label>
+<label class="option"><input type="radio" name="approach" value="3"> Use adult-level explanations of discrimination, in classroom practice.</label>
+</div><div class="btn-row"><button class="btn" id="approachCheck">Check my thinking</button></div><div class="feedback" id="approachFeedback"></div></article>
+
+<article class="card activity"><div class="section-label">Four anti-bias goals</div><h3>🧩 Match it up</h3>
+<p>The descriptions are shuffled. Match each goal with its best meaning.</p>
+<div class="match-row"><div class="term">Identity</div><select data-answer="a"><option value="">Choose…</option><option value="c">Recognize unfairness and think critically about bias</option><option value="a">Build confident personal and group identity</option><option value="d">Stand up for oneself and others when bias occurs</option><option value="b">Interact comfortably and empathetically across differences</option></select></div>
+<div class="match-row"><div class="term">Diversity</div><select data-answer="b"><option value="">Choose…</option><option value="d">Stand up for oneself and others when bias occurs</option><option value="c">Recognize unfairness and think critically about bias</option><option value="b">Interact comfortably and empathetically across differences</option><option value="a">Build confident personal and group identity</option></select></div>
+<div class="match-row"><div class="term">Justice</div><select data-answer="c"><option value="">Choose…</option><option value="b">Interact comfortably and empathetically across differences</option><option value="a">Build confident personal and group identity</option><option value="c">Recognize unfairness and think critically about bias</option><option value="d">Stand up for oneself and others when bias occurs</option></select></div>
+<div class="match-row"><div class="term">Action</div><select data-answer="d"><option value="">Choose…</option><option value="a">Build confident personal and group identity</option><option value="d">Stand up for oneself and others when bias occurs</option><option value="b">Interact comfortably and empathetically across differences</option><option value="c">Recognize unfairness and think critically about bias</option></select></div>
+<div class="btn-row"><button class="btn" id="checkMatch">Check matches</button><button class="btn secondary" id="resetMatch">Reset</button></div><div class="feedback" id="matchFeedback"></div></article>
+</section>
+
+<section class="concept-strip">
+<div class="concept"><strong>🪞 Identity</strong>Children need accurate, affirming messages about themselves and their groups.</div>
+<div class="concept"><strong>⚖️ Justice</strong>Children can learn to recognize unfairness without being burdened with adult-level explanations.</div>
+<div class="concept"><strong>✋ Action</strong>Anti-bias education goes beyond appreciation; children practice speaking up and repairing harm.</div>
+</section>
+
+<section class="grid2">
+<article class="card activity"><div class="section-label">Biased comments</div><h3>💬 What should the teacher say?</h3>
+<p class="question">A child says, “You can’t play because your skin is too dark.” What is the best response?</p>
+<div class="options">
+<label class="option"><input type="radio" name="comment" value="0"> “We include everyone. Skin color does not decide who can play.”</label>
+<label class="option"><input type="radio" name="comment" value="1"> “Let’s talk about something else.”, as part of everyday classroom practice.</label>
+<label class="option"><input type="radio" name="comment" value="2"> “That was naughty. Say sorry.”, as part of everyday classroom practice.</label>
+<label class="option"><input type="radio" name="comment" value="3"> Ignore it unless it happens again, during everyday classroom practice.</label>
+</div><div class="btn-row"><button class="btn" id="commentCheck">Check answer</button></div><div class="feedback" id="commentFeedback"></div></article>
+
+<article class="card activity"><div class="section-label">Gender development</div><h3>👗 Challenging stereotypes</h3>
+<p class="question">A child says, “Boys can’t wear pink.” Which response is strongest?</p>
+<div class="options">
+<label class="option"><input type="radio" name="gender" value="0"> “That’s just your opinion.”, during everyday classroom practice.</label>
+<label class="option"><input type="radio" name="gender" value="1"> “Let’s not argue about colors.”, in classroom practice.</label>
+<label class="option"><input type="radio" name="gender" value="2"> “Colors are for everyone. People can like different things.”</label>
+<label class="option"><input type="radio" name="gender" value="3"> “Most boys prefer other colors.”, in classroom practice.</label>
+</div><div class="btn-row"><button class="btn" id="genderCheck">Check answer</button></div><div class="feedback" id="genderFeedback"></div></article>
+</section>
+
+<section id="practice" class="grid2">
+<article class="card activity"><div class="section-label">Multicultural practice</div><h3>🌍 More than materials</h3>
+<p class="question">Which practice most strongly promotes a multicultural classroom?</p>
+<div class="options">
+<label class="option"><input type="radio" name="multi" value="0"> Model respect, discuss fairness, coach perspective-taking, and intervene when harm occurs.</label>
+<label class="option"><input type="radio" name="multi" value="1"> Add diverse posters but avoid difficult conversations, in classroom practice.</label>
+<label class="option"><input type="radio" name="multi" value="2"> Celebrate cultures mainly through food days, during everyday classroom practice.</label>
+<label class="option"><input type="radio" name="multi" value="3"> Use the same approach regardless of family context, in practice.</label>
+</div><div class="btn-row"><button class="btn" id="multiCheck">Check answer</button></div><div class="feedback" id="multiFeedback"></div></article>
+
+<article class="card activity"><div class="section-label">Conflict support</div><h3>🤝 Help children work it through</h3>
+<p class="question">Two children disagree over a dramatic-play role. What should the educator do?</p>
+<div class="options">
+<label class="option"><input type="radio" name="conflict" value="0"> Decide the winner quickly so play can continue, in practice.</label>
+<label class="option"><input type="radio" name="conflict" value="1"> Help each child state needs, hear the other perspective, and consider solutions.</label>
+<label class="option"><input type="radio" name="conflict" value="2"> Remove the materials that caused the conflict, in classroom practice.</label>
+<label class="option"><input type="radio" name="conflict" value="3"> Require an apology before discussion, as part of everyday classroom practice.</label>
+</div><div class="btn-row"><button class="btn" id="conflictCheck">Check answer</button></div><div class="feedback" id="conflictFeedback"></div></article>
+</section>
+
+<section class="grid2">
+<article class="card activity"><div class="section-label">Social justice</div><h3>📣 From noticing to action</h3>
+<p class="question">Children notice that “flesh-colored” bandages match very few classmates. Which next step best reflects anti-bias action?</p>
+<div class="options">
+<label class="option"><input type="radio" name="action" value="0"> Tell children the company probably meant well, overall.</label>
+<label class="option"><input type="radio" name="action" value="1"> Put the bandages away and change topics, overall.</label>
+<label class="option"><input type="radio" name="action" value="2"> Let children investigate, discuss fairness, and communicate their concern.</label>
+<label class="option"><input type="radio" name="action" value="3"> Explain adult politics in detail, in classroom practice.</label>
+</div><div class="btn-row"><button class="btn" id="actionCheck">Check answer</button></div><div class="feedback" id="actionFeedback"></div></article>
+
+<article class="card activity"><div class="section-label">Culture and guidance</div><h3>🧭 Interpret before correcting</h3>
+<p class="question">Why should culture matter when teachers guide behavior?</p>
+<div class="options">
+<label class="option"><input type="radio" name="guidance" value="0"> Cultural differences excuse every behavior, in practice.</label>
+<label class="option"><input type="radio" name="guidance" value="1"> Culture matters only during family events, overall.</label>
+<label class="option"><input type="radio" name="guidance" value="2"> Teachers should use one behavioral standard for fairness.</label>
+<label class="option"><input type="radio" name="guidance" value="3"> Cultural context can shape meanings, expectations, and communication.</label>
+</div><div class="btn-row"><button class="btn" id="guidanceCheck">Check answer</button></div><div class="feedback" id="guidanceFeedback"></div></article>
+</section>
+
+<section class="card activity" style="margin-top:18px"><div class="section-label">Final self-check</div><h3>Check your understanding</h3>
+<p class="question">Which statement best integrates Esquivel Chapter 6?</p>
+<div class="options">
+<label class="option"><input type="radio" name="final" value="0"> Anti-bias teaching is mainly about having diverse materials, in classroom practice.</label>
+<label class="option"><input type="radio" name="final" value="1"> Young children should be protected from conversations about unfairness, in practice.</label>
+<label class="option"><input type="radio" name="final" value="2"> Anti-bias education builds identity, respect, critical thinking, conflict skills, and action against unfairness.</label>
+<label class="option"><input type="radio" name="final" value="3"> Bias should be addressed only after children enter elementary school, overall.</label>
+</div><div class="btn-row"><button class="btn" id="finalCheck">Check my thinking</button></div><div class="feedback" id="finalFeedback"></div></section>
+
+<aside class="resource-bar"><p><strong>Need a quick review?</strong><br><span class="small">Revisit the chapter goals, multicultural classroom practices, anti-bias approach, conflict guidance, social justice, and gender development.</span></p><a class="resource-link" href="https://socialsci.libretexts.org/Bookshelves/Early_Childhood_Education/The_Role_of_Equity_and_Diversity_in_Early_Childhood_Education_(Esquivel_Elam_Paris_and_Tafoya)/06%3A_Using_Anti-Bias_Curriculum" target="_blank" rel="noopener noreferrer">📖 Return to Esquivel Chapter 6</a></aside>
+
+<section id="reflect" class="card reflection"><div class="kicker">Final reflection</div><h2>Complete this sentence</h2>
+<p><strong>When a biased comment occurs, an early childhood teacher should…</strong></p>
+<label for="reflectionText" class="sr-only">Your reflection</label><textarea id="reflectionText" placeholder="Type a few words or sentences. This response remains on this page and is not graded or submitted."></textarea>
+<div class="btn-row"><button class="btn" id="compareBtn">Compare My Thinking</button></div>
+<div class="compare-panel" id="comparePanel">
+<div class="compare-box"><h3>The chapter emphasizes…</h3><p>Educators should address harmful interactions rather than ignore them, while keeping explanations developmentally appropriate.</p></div>
+<div class="compare-box"><h3>Consider…</h3><p>Did your response affirm the child targeted, name the unfairness, and help children think about a better action?</p></div>
+<div class="compare-box"><h3>Add to your thinking…</h3><p>Anti-bias curriculum aims not only for respectful attitudes but for children’s growing ability to recognize and challenge unfairness.</p></div>
+</div></section>
+
+<div class="complete" id="completeBox"><div><strong>🌟 Guide complete!</strong><br><span class="small">You practiced responding to bias, supporting conflict resolution, challenging stereotypes, and helping children move from fairness to action.</span></div><button class="btn" id="restartBtn">Restart guide</button></div>
+</main>
+
+<script>
+const state={story:false,approach:false,match:false,comment:false,gender:false,multi:false,conflict:false,action:false,guidance:false,final:false,reflect:false};
+const steps=[...document.querySelectorAll('.step')];
+function updateProgress(){const done=Object.values(state).filter(Boolean).length;const pct=Math.round(done/11*100);const bar=document.querySelector('.progress-line');document.getElementById('progressFill').style.width=pct+'%';document.getElementById('progressText').textContent=pct+'%';bar.setAttribute('aria-valuenow',pct);steps.forEach((s,i)=>{s.classList.toggle('done',i<Math.min(4,Math.ceil(done*4/11)));s.classList.toggle('active',i===Math.min(3,Math.floor(done*4/11)))});if(done===11)document.getElementById('completeBox').classList.add('show')}
+function show(box,txt){box.innerHTML=txt;box.classList.add('show')}
+function shuffleChildren(parent,selector){const items=[...parent.querySelectorAll(':scope > '+selector)];for(let i=items.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[items[i],items[j]]=[items[j],items[i]]}items.forEach(item=>parent.appendChild(item))}
+document.querySelectorAll('.options').forEach(group=>shuffleChildren(group,'.option'));
+document.querySelectorAll('.match-row select').forEach(select=>{const placeholder=select.options[0];const choices=[...select.options].slice(1);for(let i=choices.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[choices[i],choices[j]]=[choices[j],choices[i]]}select.replaceChildren(placeholder,...choices)});
+document.querySelectorAll('a[target="_blank"]').forEach(link=>link.rel='noopener');
+document.querySelectorAll('button').forEach(button=>button.type='button');
+function radioCheck(name,correct,feedbackId,success,retry,key){const c=document.querySelector('input[name='+name+']:checked'),f=document.getElementById(feedbackId);if(!c)return show(f,'⚠️ Choose an answer first.');const ok=Number(c.value)===correct;show(f,ok?'✅ <strong>Correct.</strong> '+success:'↻ <strong>Try again.</strong> '+retry);if(ok){state[key]=true;updateProgress()}}
+document.getElementById('storyDone').onclick=()=>{state.story=true;updateProgress();document.getElementById('explore').scrollIntoView({behavior:'smooth'})};
+document.getElementById('approachCheck').onclick=()=>radioCheck('approach',1,'approachFeedback','Anti-bias teaching combines identity, respect for difference, critical thinking about unfairness, and action.','Choose the response that goes beyond silence or sameness.','approach');
+document.getElementById('checkMatch').onclick=()=>{const ss=[...document.querySelectorAll('.match-row select')],f=document.getElementById('matchFeedback');if(!ss.every(s=>s.value))return show(f,'⚠️ Complete all four matches first.');const n=ss.filter(s=>s.value===s.dataset.answer).length;show(f,n===4?'✅ <strong>Nice work!</strong> All four anti-bias goals are matched correctly.':'↻ You matched <strong>'+n+' of 4</strong> correctly. Recheck the goals and try again.');if(n===4){state.match=true;updateProgress()}};
+document.getElementById('resetMatch').onclick=()=>{document.querySelectorAll('.match-row select').forEach(s=>s.value='');document.getElementById('matchFeedback').classList.remove('show')};
+document.getElementById('commentCheck').onclick=()=>radioCheck('comment',0,'commentFeedback','The teacher names the inclusive rule and makes clear that skin color does not determine access to play.','Respond directly without shaming or avoiding the issue.','comment');
+document.getElementById('genderCheck').onclick=()=>radioCheck('gender',2,'genderFeedback','This response challenges the stereotype without shaming the child.','Look for a simple, clear correction of the limiting message.','gender');
+document.getElementById('multiCheck').onclick=()=>radioCheck('multi',0,'multiFeedback','Multicultural practice includes modeling respect, discussing fairness, coaching social understanding, and intervening in harm.','Choose active daily practice rather than decoration alone.','multi');
+document.getElementById('conflictCheck').onclick=()=>radioCheck('conflict',1,'conflictFeedback','Conflict coaching helps children express perspectives and build increasingly independent problem-solving skills.','Choose support for perspective-taking and solution-finding.','conflict');
+document.getElementById('actionCheck').onclick=()=>radioCheck('action',2,'actionFeedback','Investigation and communication allow children to move from noticing unfairness toward constructive action.','Choose the response that lets children examine and address the problem.','action');
+document.getElementById('guidanceCheck').onclick=()=>radioCheck('guidance',3,'guidanceFeedback','Culture can influence expectations, communication, and the meaning adults and children assign to behavior.','Choose interpretation with cultural context, not a one-size-fits-all rule.','guidance');
+document.getElementById('finalCheck').onclick=()=>radioCheck('final',2,'finalFeedback','Anti-bias education integrates identity, diversity, justice, conflict skills, and action.','Choose the comprehensive response.','final');
+document.getElementById('compareBtn').onclick=()=>{document.getElementById('comparePanel').classList.add('show');state.reflect=true;updateProgress();document.getElementById('comparePanel').scrollIntoView({behavior:'smooth',block:'nearest'})};
+document.getElementById('restartBtn').onclick=()=>location.reload();
+updateProgress();
+</script>
+</body></html>
